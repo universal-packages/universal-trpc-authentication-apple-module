@@ -4,7 +4,7 @@ import { AppleModuleDynamicNames } from '@universal-packages/authentication-appl
 import { BaseTrpcAuthenticationResult, CURRENT_AUTHENTICATION, TrpcAuthenticationDynamicNames } from '@universal-packages/trpc-authentication'
 import { z } from 'zod'
 
-export function createDefaultAuthenticationModuleRouter<U extends Record<string, any>, T extends ReturnType<typeof initTRPC.create>>(trpcInstance: T) {
+export function createAppleModuleRouter<U extends Record<string, any>, T extends ReturnType<typeof initTRPC.create>>(trpcInstance: T) {
   return trpcInstance.router({
     signInWithApple: trpcInstance.procedure
       .input(

@@ -1,7 +1,7 @@
 import { initTRPC } from '@trpc/server'
 
-import { createDefaultAuthenticationModuleRouter } from '../src'
+import { createAppleModuleRouter } from '../src'
 
 export const trpc = initTRPC.create()
 
-export const appRouter = trpc.mergeRouters(createDefaultAuthenticationModuleRouter(trpc))
+export const appRouter = trpc.mergeRouters(createAppleModuleRouter(trpc))
