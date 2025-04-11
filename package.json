@@ -16,7 +16,7 @@
     "update-universal-dependencies": "umaintenance update-universal-dependencies"
   },
   "dependencies": {
-    "@universal-packages/authentication-apple-module": "^1.0.3"
+    "@universal-packages/authentication-apple-module": "^1.1.0"
   },
   "peerDependencies": {
     "@universal-packages/trpc-authentication": "^1.4.2"
