@@ -19,7 +19,7 @@
     "@universal-packages/authentication-apple-module": "^1.0.2"
   },
   "peerDependencies": {
-    "@universal-packages/trpc-authentication": "^1.4.1"
+    "@universal-packages/trpc-authentication": "^1.4.2"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
