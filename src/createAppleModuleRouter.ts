@@ -9,13 +9,15 @@ export function createAppleModuleRouter<U extends Record<string, any>, T extends
     signInWithApple: trpcInstance.procedure
       .input(
         z.object({
-          code: z.string()
+          code: z.string(),
+          locale: z.string().optional(),
+          timezone: z.string().optional()
         })
       )
       .mutation(async ({ input, ctx }): Promise<BaseTrpcAuthenticationResult & { user: U; sessionToken: string }> => {
         const authenticationInstance = CURRENT_AUTHENTICATION.instance as unknown as Authentication<TrpcAuthenticationDynamicNames & AppleModuleDynamicNames>
 
-        const result = await authenticationInstance.performDynamic('sign-in-with-apple', { code: input.code })
+        const result = await authenticationInstance.performDynamic('sign-in-with-apple', { code: input.code, locale: input.locale, timezone: input.timezone })
 
         if (result.status === 'success') {
           const sessionToken = await CURRENT_AUTHENTICATION.instance.performDynamic('set-session', { user: result.user, context: ctx })
